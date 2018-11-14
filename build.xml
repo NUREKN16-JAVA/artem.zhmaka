@@ -1,0 +1,33 @@
+<project name="UserManagement" default="compile">
+
+    <property environment="env"/>
+    <taskdef file="org/jetbrains/kotlin/ant/antlib.xml">
+        <classpath>
+            <fileset dir="${env.KOTLIN}/kotlinc/lib" includes="*.jar"/>
+        </classpath>
+    </taskdef>
+
+    <property name="output" value="./out"/>
+
+    <target name="clean">
+        <delete dir="${output}"/>
+    </target>
+
+    <target name="compile">
+        <kotlinc src="$src/main/kotlin/ua/nure/kn/zhmaka/usermanagement/User/User.kt" output="${output}"/>
+    </target>
+
+
+    <path id="classpath.run">
+        <pathelement path="${output}/"/>
+        <pathelement path="${env.KOTLIN}kotlinc/lib/kotlin-runtime.jar"/>
+    </path>
+
+    <target name="run">
+        <java classname="namespace">
+            <sysproperty key="file.encoding" value="UTF-8"/>
+            <classpath refid="classpath.run"/>
+        </java>
+    </target>
+
+</project>

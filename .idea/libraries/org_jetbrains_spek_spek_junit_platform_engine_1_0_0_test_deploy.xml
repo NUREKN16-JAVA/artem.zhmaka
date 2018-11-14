@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="org.jetbrains.spek:spek-junit-platform-engine:1.0.0-test-deploy" type="repository">
+    <properties maven-id="org.jetbrains.spek:spek-junit-platform-engine:1.0.0-test-deploy" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/spek/spek-junit-platform-engine/1.0.0-test-deploy/spek-junit-platform-engine-1.0.0-test-deploy.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.0.2/kotlin-stdlib-1.0.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-runtime/1.0.2/kotlin-runtime-1.0.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-reflect/1.0.2/kotlin-reflect-1.0.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/spek/spek-api/1.0.0-test-deploy/spek-api-1.0.0-test-deploy.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
