@@ -50,7 +50,6 @@ class User : Serializable {
 
 fun main(args: Array<String>) {
     var user: User = User("Ivan", "Ivanov", SimpleDateFormat("d-MMM-yyyy").parse("4-Jan-1999"))
-    var date:Date =  SimpleDateFormat("d-MMM-yyyy").parse("5-Jan-1999")
     println(" User age is %d years".format(user.calculateAge()))
-    println(" User name is - ".format(user.getFullName()))
+    println(" User name is - %s".format(user.getFullName()))
 }

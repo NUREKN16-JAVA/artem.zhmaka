@@ -1,9 +1,9 @@
 <project name="UserManagement" default="compile">
 
     <property environment="env"/>
-    <taskdef file="org/jetbrains/kotlin/ant/antlib.xml">
+    <taskdef resource="org/jetbrains/kotlin/ant/antlib.xml">
         <classpath>
-            <fileset dir="${env.KOTLIN}/kotlinc/lib" includes="*.jar"/>
+            <fileset dir="${env.JAVA_HOME}/kotlin-compiler-1.2.70-linux-x64/kotlinc/lib" includes="*.jar"/>
         </classpath>
     </taskdef>
 
@@ -14,13 +14,13 @@
     </target>
 
     <target name="compile">
-        <kotlinc src="$src/main/kotlin/ua/nure/kn/zhmaka/usermanagement/User/User.kt" output="${output}"/>
+        <kotlinc src="src/main/kotlin/ua/nure/kn/zhmaka/usermanagement/User/User.kt" output="${output}"/>
     </target>
 
 
     <path id="classpath.run">
         <pathelement path="${output}/"/>
-        <pathelement path="${env.KOTLIN}kotlinc/lib/kotlin-runtime.jar"/>
+        <pathelement path="${env.JAVA_HOME}/kotlin-compiler-1.2.70-linux-x64/kotlinc/lib/kotlin-runtime.jar"/>
     </path>
 
     <target name="run">
