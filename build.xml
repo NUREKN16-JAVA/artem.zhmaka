@@ -1,4 +1,4 @@
-<project name="UserManagement" default="compile">
+<project name="UserManagement" >
 
     <property environment="env"/>
     <taskdef resource="org/jetbrains/kotlin/ant/antlib.xml">
@@ -29,5 +29,4 @@
             <classpath refid="classpath.run"/>
         </java>
     </target>
-
 </project>
