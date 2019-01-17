@@ -23,19 +23,19 @@ class HsqldbUserDAO implements UserDAO {
     }
     @Override
     public User create(User user) throws DatabaseException {
-    	
+
         try{Connection connection = connectionFactory.createConnection();
-        PreparedStatement statement = connection.prepareStatement(INSERT_QUERY);
-        statement.setString(1, user.getFirstName());
-        statement.setString(2, user.getLastName());
-        statement.setDate(3, new Date(user.getDateOfBirth().getTime()));
+            PreparedStatement statement = connection.prepareStatement(INSERT_QUERY);
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getLastName());
+            statement.setDate(3, new Date(user.getDateOfBirth().getTime()));
 
-        int n = statement.executeUpdate();
-        if (n != 1) throw new DatabaseException("Numbers of Inserted rows: " + n);
-        CallableStatement callableStatement = connection.prepareCall("call IDENTITY()");
-        ResultSet keys = callableStatement.executeQuery();
+            int n = statement.executeUpdate();
+            if (n != 1) throw new DatabaseException("Numbers of Inserted rows: " + n);
+            CallableStatement callableStatement = connection.prepareCall("call IDENTITY()");
+            ResultSet keys = callableStatement.executeQuery();
 
-        if (keys.next()) {
+            if (keys.next()) {
                 user.setId(keys.getLong(1));
             }
             keys.close();
@@ -71,7 +71,7 @@ class HsqldbUserDAO implements UserDAO {
 
 
     @Override
-    public void delete(Long id) throws DatabaseException {
+    public void delete(User id) throws DatabaseException {
         try {
             Connection connection = connectionFactory.createConnection();
             PreparedStatement statement = connection.prepareStatement(DELETE_QUERY);
